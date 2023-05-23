@@ -1,0 +1,53 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.supervisor {
+  align-self: flex-end;
+  background-color: #0084ff;
+  color: white;
+  border-radius: 12px;
+  padding: 5px 10px;
+  max-width: 80%;
+}
+
+.ejecutivo {
+  align-self: flex-start;
+  background-color: #eee;
+  border-radius: 12px;
+  padding: 5px 10px;
+  max-width: 80%;
+  color: black;
+}
+
+.message-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-form input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.message-form button {
+  padding: 5px 10px;
+}

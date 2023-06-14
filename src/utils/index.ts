@@ -14,21 +14,22 @@ import db from './firebase'
 
 export const createChatRoom = async (
   supervisorID: string,
-  executiveRUT: string
+  executiveUID: string
 ): Promise<void> => {
   try {
     // Crear el ID del chat concatenando el RUT del ejecutivo y el ID del supervisor
-    const chatID = `${supervisorID}-${executiveRUT}`
+    const chatID = `${supervisorID}-${executiveUID}`
 
     // Crear una referencia al documento en Firestore
     const chatDocRef = doc(db, 'chats', chatID)
 
     // Crear el documento con un array vacío para los mensajes
     await setDoc(chatDocRef, {
-      participants: [supervisorID, executiveRUT],
-      executiveRUT, // Campo agregado
-      supervisorUID: supervisorID, // Campo agregado
-      supervisorName: 'Oscar Angel', // Campo agregado
+      participants: [supervisorID, executiveUID],
+      executiveUID: executiveUID,
+      supervisorUID: supervisorID,
+      supervisorName: 'Oscar Angel',
+      executiveName: 'Ejecutivo',
       timestamp: serverTimestamp(),
     })
 
